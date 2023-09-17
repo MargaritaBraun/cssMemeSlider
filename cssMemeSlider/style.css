@@ -9,7 +9,9 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: gray;
+    background: url('image/images.jpg');
+    background-repeat: repeat;
+    font-size: 10px;
 }
 
 ul,
@@ -22,6 +24,18 @@ a {
     text-decoration: none;
 }
 
+.container {
+    /*border: #18a3dd solid 3px;*/
+    margin: 20px auto;
+    width: 85vw;
+    height: 95vh;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    border: 6px solid #b006c7;
+    border-radius: 15px 100px 15px 100px;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
 .wrapper {
     margin: 0 auto;
 }
@@ -30,12 +44,13 @@ a {
     display: flex;
     flex-direction: column;
     margin: 0 auto;  
-    width: 98vw;
-    height: 85vh;
+    width: 75vw;
+    height: 60vh;
 }
 
 .div-input {
-    display: block;
+    display: flex;
+    flex-wrap: nowrap;
     /*height: 15vh;*/
 }
 
@@ -43,29 +58,36 @@ a {
     order: 2;
     display: flex;
     justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
     /*
     margin: 0 50px;
     height: 20vh;
     */
 }
 
-.text {
-    margin-top: 10px;
-}
-
 .panel-text {
-    /*width: 100px;*/
-    display: block;
+    width: 500%;
+    display: flex;
 }
 
-#Meme-1 {
-    display: none;
-}
+.panel-text > .text {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Bradley Hand, cursive;
+    color: #85e40a;
+    font-size: 3rem;
 
-#Meme-2 {
-    display: none;
 }
+/*
 
+.text {
+    margin: 10px;
+    width: 50vw;
+}
+*/
 /*
 .slides {
     width: 100vw;
@@ -91,9 +113,9 @@ a {
 }
 
 img {
-    width: 600px;
+    width: 50vw;
     /*height: 50%;*/
-    height: 75vh;
+    height: 70vh;
     object-fit: contain;
     object-position: center center;
     margin: 20px auto;
