@@ -51,15 +51,20 @@ a {
 .div-input {
     display: flex;
     flex-wrap: nowrap;
+    flex-basis: 40%;
     /*height: 15vh;*/
 }
 
 .panel {
     order: 2;
+    width: 80%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: nowrap;
     align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: auto;
     /*
     margin: 0 50px;
     height: 20vh;
@@ -67,20 +72,48 @@ a {
 }
 
 .panel-text {
-    width: 500%;
     display: flex;
+    /*flex-basis: 40%;*/
+    width: 75%;
+    /*height: 15vh;*/
 }
 
-.panel-text > .text {
-    flex-basis: 100%;
+.flex-text {
     display: flex;
-    justify-content: center;
+    width: 500%;
+    /*gap: 100rem;
+    width: 50rem;
+    flex-basis: 100%;*/
+    margin: 0 auto;
+}
+
+.flex-text > .text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /*flex-basis: 100%;
+    width: 50rem;*/
+    padding: 0 50px ;
+    /*margin: 0 auto;*/
+    /*width: 100%;*/
+    flex-grow: 1;
+    flex-shrink: 0;
+    /*margin: 20px auto;*/
+    transition: all 800ms cubic-bezier(0.51, 0.27, 0.43, 0.79);
+}
+
+.text {
+    /*width: 20vw;
+    width: 50rem;
+    flex-basis: 100%;
+    height: 4rem;*/
+    display: flex;
     align-items: center;
     font-family: Bradley Hand, cursive;
     color: #85e40a;
-    font-size: 3rem;
-
+    font-size: 2rem;
 }
+
 /*
 
 .text {
@@ -88,12 +121,12 @@ a {
     width: 50vw;
 }
 */
-/*
+
 .slides {
-    width: 100vw;
-    height: 75vh;
+    margin: 0 auto;
+    width: 100%;
 }
-*/
+
 
 .image__container {
     display: flex;
@@ -122,10 +155,8 @@ img {
 }
 
 .overflow {
-    /*width: 100vw;*/
     overflow: hidden;
 }
-
 
 input {
     position: absolute;
@@ -142,20 +173,40 @@ label, a{
 	margin-left: 0;
 }
 
+.panel:has(#item-1:checked) .flex-text .text {
+	margin-left: 1%;
+}
+
 .panel:has(#item-2:checked) ~ .slides .image__container{
 	margin-left: -100%;
+}
+
+.panel:has(#item-2:checked) .flex-text .text {
+	margin-left: -17.5%;
 }
 
 .panel:has(#item-3:checked) ~ .slides .image__container{
 	margin-left: -200%;
 }
 
+.panel:has(#item-3:checked) .flex-text .text {
+	margin-left: -37%;
+}
+
 .panel:has(#item-4:checked) ~ .slides .image__container{
 	margin-left: -300%;
 }
 
+.panel:has(#item-4:checked) .flex-text .text  {
+	margin-left: -58%;
+}
+
 .panel:has(#item-5:checked) ~ .slides .image__container{
 	margin-left: -400%;
+}
+
+.panel:has(#item-5:checked) .flex-text .text  {
+	margin-left: -79%;
 }
 
 .label__controls { /*стиль отдельного переключателя*/
@@ -174,4 +225,66 @@ label, a{
 
 .slides .image__container{ /*анимация пролистывания изображений*/
 	transition: all 800ms cubic-bezier(0.51, 0.27, 0.43, 0.79);
+}
+
+@media (max-width: 53rem) {
+.panel {
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+img {
+height: 30vw;
+margin: 0 auto;
+}
+
+.panel-text {
+    width: 50rem;
+    margin: auto;
+}
+
+.flex-text > .text {
+    text-align: center;
+    height: 10rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.text {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.panel:has(#item-1:checked) .flex-text .text {
+	margin-left: 2%;
+}
+
+.panel:has(#item-2:checked) .flex-text .text {
+	margin-left: -34%;
+}
+
+.panel:has(#item-3:checked) .flex-text .text {
+	margin-left: -75%;
+}
+
+.panel:has(#item-4:checked) .flex-text .text {
+	margin-left: -117%;
+}
+
+.panel:has(#item-5:checked) .flex-text .text {
+	margin-left: -159%;
+}
+
+}
+
+@media (max-width: 30rem) {
+.container {
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
 }
