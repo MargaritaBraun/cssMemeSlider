@@ -1,0 +1,308 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: url('image/images.jpg');
+    background-repeat: repeat;
+    font-size: 10px;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    /*border: #18a3dd solid 3px;*/
+    margin: 1rem auto;
+    width: 85vw;
+    height: 105vh;
+    box-shadow: 0.5rem 0.5rem 0.8rem rgba(34, 60, 80, 0.2);
+    border: 0.6rem solid #b006c7;
+    border-radius: 1.5rem 10rem 1.5rem 10rem;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    padding: 5rem;
+}
+
+.wrapper {
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;  
+    /*width: 75vw;
+    height: 85vh;*/
+}
+
+.div-input {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-basis: 40%;
+    /*height: 15vh;*/
+}
+
+.panel {
+    order: 2;
+    /*width: 70rem;*/
+    /*height: 30%;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    /*
+    flex-wrap: nowrap;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 0 50px;
+    height: 20vh;
+    */
+}
+
+.block-text {
+    width: 50rem;
+    overflow: hidden;
+}
+
+.panel-text {
+    display: flex;
+    /*flex-basis: 40%;*/
+    width: 500%;
+    /*height: 15vh;*/
+}
+
+.flex-text {
+    display: flex;
+    gap: 5rem;
+    /*width: 500%;
+    /*
+    width: 50rem;
+    flex-basis: 100%;*/
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.text {
+    width: 100%;
+    height: 8rem;
+    text-align: center;
+    font-family: Bradley Hand, cursive;
+    color: #85e40a;
+    font-size: 2.7rem;
+    margin: 0 10rem 0 10rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*
+.flex-text > .text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /*flex-basis: 100%;
+    width: 50rem;
+    padding: 0 50px ;
+    margin: 0 auto;
+    width: 100%;
+    
+    margin: 20px auto;
+    transition: all 800ms cubic-bezier(0.51, 0.27, 0.43, 0.79);
+}
+
+*/
+
+.slides {
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+.image__container {
+    display: flex;
+    gap: 50px;
+    width: 500%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.image__container > .img__block {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+img {
+    width: 50vw;
+    /*height: 50%;*/
+    height: 70vh;
+    object-fit: contain;
+    object-position: center center;
+    margin: 2rem auto;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+input {
+    display: none;
+}
+
+label, a{ 
+	cursor: pointer;
+}
+
+
+/*позиция изображения при активации переключателя*/
+.panel:has(#item-1:checked) ~ .slides .image__container{
+	margin-left: 0;
+}
+
+.panel:has(#item-1:checked) .flex-text .text {
+	margin-left: 0;
+}
+
+.panel:has(#item-2:checked) ~ .slides .image__container{
+	margin-left: -100%;
+}
+
+.panel:has(#item-2:checked) .flex-text .text {
+	margin-left: -36%;
+}
+
+.panel:has(#item-3:checked) ~ .slides .image__container{
+	margin-left: -200%;
+}
+
+.panel:has(#item-3:checked) .flex-text .text {
+	margin-left: -75.5%;
+}
+
+.panel:has(#item-4:checked) ~ .slides .image__container{
+	margin-left: -300%;
+}
+
+.panel:has(#item-4:checked) .flex-text .text  {
+	margin-left: -88.9%;
+    padding: 0 25rem;
+}
+
+.panel:has(#item-5:checked) ~ .slides .image__container{
+	margin-left: -400%;
+}
+
+.panel:has(#item-5:checked) .flex-text .text  {
+	margin-left: -91.9%;
+    padding: 0 25rem;
+   /* margin-right: 0;*/
+}
+
+.label__controls { /*стиль отдельного переключателя*/
+	border-radius: 10px; /*скругление углов*/
+	display: inline-block; /*расположение в строку*/
+	width: 3rem;
+	height: 3rem;
+	background: #bbb;
+    margin: 2rem;
+}
+
+.input__item:checked + .label__controls {
+    background: #85e40a;
+    border: #18a3dd 0.5rem solid;
+}
+
+.label__controls:hover {
+    background: #e43d0a;
+    border: #3fdd18 0.5rem solid;
+}
+
+.label__controls:active {
+    background: #f9fd04;
+    border: #f00aab 0.5rem solid;
+}
+
+.slides .image__container{ /*анимация пролистывания изображений*/
+	transition: all 800ms cubic-bezier(0.51, 0.27, 0.43, 0.79);
+}
+.flex-text .text {
+transition: all 800ms cubic-bezier(0.51, 0.27, 0.43, 0.79);
+}
+
+@media (max-width: 70rem) {
+.panel {
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+img {
+height: 30vw;
+margin: 0 auto;
+}
+
+.panel-text {
+    width: 346rem;
+    margin: auto;
+
+}
+
+.text {
+    /*flex-wrap: wrap;*/
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.panel:has(#item-1:checked) .flex-text .text {
+	/*margin-left: ;*/
+    margin: 0 20rem 0 1rem;
+}
+
+.panel:has(#item-2:checked) .flex-text .text {
+	/*margin: 0 20rem 0 1rem;*/
+    margin-left: -83%;
+}
+
+.panel:has(#item-3:checked) .flex-text .text {
+	/*margin-left: -75%;*/
+    margin-left: -123.5%
+}
+
+.panel:has(#item-4:checked) .flex-text .text {
+	/*margin-left: -117%;*/
+    margin-left: -123.5%
+}
+
+.panel:has(#item-5:checked) .flex-text .text {
+	/*margin-left: -159%;*/
+    margin-left: -83%;
+}
+
+}
+
+@media (max-width: 30rem) {
+.container {
+    margin: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+}
